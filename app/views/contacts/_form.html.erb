@@ -1,0 +1,12 @@
+<%= form_for ([@user, @contact]) do |f| %>
+<%= @contact.errors.full_messages.to_sentence%>
+
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p> 
+
+  <p>
+    <%= f.submit %>
+  </p>  
+<% end %>

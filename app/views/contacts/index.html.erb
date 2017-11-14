@@ -1,0 +1,13 @@
+<h1>Contacts</h1>
+<p id="notice"><%= notice %></p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th class="actions">Actions</th>
+  </tr> 
+  <tbody>
+    <%= render @contacts %>
+  </tbody>
+</table>
+
+<%= link_to 'New Contact', new_user_contact_path %>
