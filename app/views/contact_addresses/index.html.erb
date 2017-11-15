@@ -1,0 +1,14 @@
+<h1>ContactAddresses</h1>
+
+<table>
+  <tr>
+    <th>AddressType</th>
+    <th>Address</th>
+    <th class="actions">Actions</th>
+  </tr> 
+  <tbody>
+    <%= render @contact_addresses %>
+  </tbody>
+</table>
+
+<%= link_to 'New Contact Address', new_contact_contact_address_path %>

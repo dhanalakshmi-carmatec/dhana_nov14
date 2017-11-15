@@ -1,0 +1,20 @@
+<%= form_for ([@user, @contact, @contact_address]) do |f| %>
+
+<%= @contact_address.errors.full_messages.to_sentence %>
+
+  <p>
+    <%= f.label :address_type %>
+    <%= f.select :address_type, options_for_select(["Home", "Office", "Other"]) %>
+  </p>
+
+  <p>
+    <%= f.label :address %>
+    <%= f.text_area :address %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>       
+

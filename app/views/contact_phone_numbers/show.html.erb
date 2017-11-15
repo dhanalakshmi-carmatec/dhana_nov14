@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+<h2>ContactPhoneNumber Details</h2>
+
+<p>
+  <strong>PhoneType:</strong>
+  <%= @contact_phone_number.phone_type %>
+</p>
+
+<p>
+  <strong>PhoneNumber:</strong>
+  <%= number_to_phone(@contact_phone_number.phone_number) %>
+</p>
+
+</div>

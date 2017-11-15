@@ -1,13 +1,13 @@
 class ContactsController < ApplicationController
   before_action :set_user
-  before_action :set_contact, only: [:edit, :show,:update, :destroy]
+  before_action :set_contact, only: [:edit, :show, :update, :destroy]
   
   def index
   	@contacts =  @user.contacts
   end
 
   def new
-  	@contact = Contact.new
+  	@contact = @user.contacts.new
   end
 
   def create 

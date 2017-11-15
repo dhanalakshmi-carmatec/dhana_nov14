@@ -1,0 +1,20 @@
+<%= form_for ([@contact, @contact_phone_number]) do |f| %>
+
+<%= @contact_phone_number.errors.full_messages.to_sentence %>
+
+  <p>
+    <%= f.label :phone_type %>
+    <%= f.select :phone_type, options_for_select(["Home", "Office", "Fax", "Mobile", "other"]) %>
+  </p>
+
+  <p>
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>       
+
