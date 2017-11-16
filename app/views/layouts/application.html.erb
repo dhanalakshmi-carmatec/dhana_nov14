@@ -18,22 +18,27 @@
        </div>
         <ul class="nav navbar-nav">
           <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Users", users_path %></li>
+          <li><%= link_to "Users", users_path %></li> 
+          <% if user_signed_in? %>
+            <li><%= link_to "Contacts", user_contacts_path(current_user, @contact) %></li>
+            <li><%= link_to "Contact Addresses", contact_contact_addresses_path(current_user, @contact_address) %></li> 
+            <li><%= link_to "Contact PhoneNumbers", contact_contact_phone_numbers_path(current_user, @contact_phone_numbers) %></li>  
+          <%end%> 
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
             <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-            <li><%= link_to('Login', new_user_session_path) %></li>
+            <li><%= link_to 'Login', new_user_session_path %></li>
           <% end %>
-       </ul>
+        </ul>
       </nav>
      </div>
      </head>
      <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <!-- <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
     <%= yield %>
   </body>
 </html>

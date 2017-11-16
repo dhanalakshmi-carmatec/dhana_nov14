@@ -1,20 +1,17 @@
+<hr class="border">
 <%= form_for ([@contact, @contact_phone_number]) do |f| %>
+  <%= @contact_phone_number.errors.full_messages.to_sentence%>
+    <div class="form-group">
+      <%= f.label :phone_type %>
+      <%= f.select :phone_type, options_for_select(["Home", "Office", "Fax", "Mobile", "other"]), prompt: 'Select One' %>
+    </div>  
 
-<%= @contact_phone_number.errors.full_messages.to_sentence %>
+    <div class="form-group">
+      <%= f.label :phone_number %>
+      <%= f.text_field :phone_number %>
+    </div>  
 
-  <p>
-    <%= f.label :phone_type %>
-    <%= f.select :phone_type, options_for_select(["Home", "Office", "Fax", "Mobile", "other"]) %>
-  </p>
-
-  <p>
-    <%= f.label :phone_number %>
-    <%= f.text_field :phone_number %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
- 
-<% end %>       
-
+    <div class="form-group">
+      <%= f.submit %>
+    </div>  
+<% end %>

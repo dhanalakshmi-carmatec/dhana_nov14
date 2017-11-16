@@ -1,13 +1,27 @@
-<h1>Contacts</h1>
-<p id="notice"><%= notice %></p>
-<table>
-  <tr>
-    <th>Name</th>
-    <th class="actions">Actions</th>
-  </tr> 
-  <tbody>
-    <%= render @contacts %>
-  </tbody>
-</table>
-
-<%= link_to 'New Contact', new_user_contact_path %>
+<div class="container main-container">
+  <div class="main-container-top">
+    <div class="filter-icons">
+      <ul class="nav navbar-nav navbar-right">
+        <%= link_to 'New', new_user_contact_path %>
+      </ul>
+    </div>
+      <h1>Contacts</h1>
+      <hr class="border">
+      <p id="notice"><%= notice %></p>
+      <div class="table table-bordered">
+       <div class="table-responsive scrollbar" id="table-scrollbar">	 
+		 <table class="table mmt-table" id="emp_table">
+           <thead>
+             <tr>
+               <th>Name</th>
+               <th class="actions">Actions</th>
+              </tr>
+           </thead>
+           <body>
+             <%= render @contacts %>
+           </body>
+        </table>
+       </div>
+      </div>
+  </div>
+</div>

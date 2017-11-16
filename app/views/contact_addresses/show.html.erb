@@ -1,16 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="container main-container">
+  <div class="main-container-top">
+    <div class="filter-icons">
+      <ul class="nav navbar-nav navbar-right">
+        <%= link_to 'Edit', edit_contact_contact_address_path(@contact, @contact_address) %> 
+      </ul>
+    </div>
+  </div>
+  <h2>Contact Address - Details</h2>
+    <hr class="border">
+  <div class="container">
+  <p>
+    <strong>AddressType:</strong>
+    <%= @contact_address.address_type %>
+  </p>
 
-<div class="container">
-<h2>ContactAddress Details</h2>
-
-<p>
-  <strong>AddressType:</strong>
-  <%= @contact_address.address_type %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @contact_address.address %>
-</p>
-
+  <p>
+    <strong>Address:</strong>
+    <%= @contact_address.address %>
+  </p>
 </div>

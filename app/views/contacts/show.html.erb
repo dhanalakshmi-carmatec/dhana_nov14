@@ -1,9 +1,16 @@
-
-<p id="notice"><%= notice %></p>
-
-<div class="container">
-<h2>Contact Details</h2>
-<p>
-  <strong>Name:</strong>
-  <%= @contact.name %>
-</p>
+<div class="container main-container">
+  <div class="main-container-top">
+    <div class="filter-icons">
+      <ul class="nav navbar-nav navbar-right">
+        <%= link_to 'Edit', edit_user_contact_path(@user, @contact) %> 
+      </ul>
+    </div>
+  </div>
+  <h2>Contact Details</h2>
+    <hr class="border">
+  <div class="container">
+  <p>
+    <strong>Name:</strong>
+    <%= @contact.name %>
+  </p>
+</div>

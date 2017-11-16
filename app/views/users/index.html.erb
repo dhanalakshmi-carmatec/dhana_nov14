@@ -1,14 +1,29 @@
-<h1>Users</h1>
-<!-- <p id="notice"><%= notice %></p> -->
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Password</th>
-    <th class="actions">Actions</th>
-  </tr>
- <tbody>
-    <%= render @users %>
-  </tbody>
-</table>
-<%= link_to 'New User', new_user_path %>
+<div class="container main-container">
+  <div class="main-container-top">
+    <div class="filter-icons">
+      <ul class="nav navbar-nav navbar-right">
+        <%= link_to 'New', new_user_path %>
+      </ul>
+    </div>
+      <h1>Users</h1>
+      <hr class="border">
+      <p id="notice"><%= notice %></p>
+      <div class="table table-bordered">
+       <div class="table-responsive scrollbar" id="table-scrollbar">	 
+		 <table class="table mmt-table" id="emp_table">
+           <thead>
+             <tr>
+               <th>Name</th>
+               <th>Email</th>
+               <!-- <th>Password</th> -->
+               <th class="actions">Actions</th>
+              </tr>
+           </thead>
+           <body>
+             <%= render @users %>
+           </body>
+        </table>
+       </div>
+      </div>
+  </div>
+</div>

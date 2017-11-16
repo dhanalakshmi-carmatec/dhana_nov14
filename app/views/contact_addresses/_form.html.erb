@@ -1,20 +1,17 @@
-<%= form_for ([@user, @contact, @contact_address]) do |f| %>
+<hr class="border">
+<%= form_for ([@contact, @contact_address]) do |f| %>
+  <%= @contact_address.errors.full_messages.to_sentence%>
+    <div class="form-group">
+      <%= f.label :address_type %>
+      <%= f.select :address_type, options_for_select(["Home", "Office", "other"]), prompt: 'Select One' %>
+    </div>  
 
-<%= @contact_address.errors.full_messages.to_sentence %>
+    <div class="form-group">
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+    </div>  
 
-  <p>
-    <%= f.label :address_type %>
-    <%= f.select :address_type, options_for_select(["Home", "Office", "Other"]) %>
-  </p>
-
-  <p>
-    <%= f.label :address %>
-    <%= f.text_area :address %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
- 
-<% end %>       
-
+    <div class="form-group">
+      <%= f.submit %>
+    </div>  
+<% end %>

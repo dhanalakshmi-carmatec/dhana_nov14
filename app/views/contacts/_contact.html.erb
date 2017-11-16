@@ -3,7 +3,11 @@
     <td class="actions">
       <%= link_to 'Show', user_contact_path(@user, contact)%>
       <%= link_to 'Edit', edit_user_contact_path(@user, contact)%>
-      <%= link_to 'Delete', user_contact_path(@user, contact), method: :delete, data: {confirm: 'Are you sure'}%>
-    
-    </td>
+      <%= link_to 'Delete', user_contact_path(@user, contact), method: :delete, data: {confirm: 'Are you sure'}%></td>
+     <!-- <td>
+      <%#= link_to 'ContactAddresses', contact_contact_addresses_path(contact, @contact_address)%> 
+     </td> 
+     <td>
+      <%#= link_to 'Contact PhoneNumbers', contact_contact_phone_numbers_path(contact, @contact_phone_number)%> 
+    </td> -->
 </tr>

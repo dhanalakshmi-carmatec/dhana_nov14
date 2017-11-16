@@ -1,16 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="container main-container">
+  <div class="main-container-top">
+    <div class="filter-icons">
+      <ul class="nav navbar-nav navbar-right">
+        <%= link_to 'Edit', edit_contact_contact_phone_number_path(@contact, @contact_phone_number) %> 
+      </ul>
+    </div>
+  </div>
+  <h2>Contact PhoneNumber - Details</h2>
+    <hr class="border">
+  <div class="container">
+  <p>
+    <strong>PhoneType:</strong>
+    <%= @contact_phone_number.phone_type %>
+  </p>
 
-<div class="container">
-<h2>ContactPhoneNumber Details</h2>
-
-<p>
-  <strong>PhoneType:</strong>
-  <%= @contact_phone_number.phone_type %>
-</p>
-
-<p>
-  <strong>PhoneNumber:</strong>
-  <%= number_to_phone(@contact_phone_number.phone_number) %>
-</p>
-
+  <p>
+    <strong>PhoneNumber:</strong>
+    <%= number_to_phone(@contact_phone_number.phone_number) %>
+  </p>
 </div>

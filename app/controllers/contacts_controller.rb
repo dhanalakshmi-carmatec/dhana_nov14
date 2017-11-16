@@ -3,19 +3,19 @@ class ContactsController < ApplicationController
   before_action :set_contact, only: [:edit, :show, :update, :destroy]
   
   def index
-  	@contacts =  @user.contacts
+  	@contacts = current_user.contacts
   end
 
   def new
-  	@contact = @user.contacts.new
+  	@contact = current_user.contacts.new
   end
 
   def create 
-    @contact = @user.contacts.new(contact_params)
+    @contact = current_user.contacts.new(contact_params)
       if @contact.save
       	redirect_to user_contacts_path, notice: 'Contact created successfully'
       else
-        flash.now[:alert] = 'User not created' 
+        flash.now[:alert] = 'Contact not created' 
         render 'new'
       end   	
   end	
@@ -30,7 +30,7 @@ class ContactsController < ApplicationController
     if @contact.update(contact_params)
     	redirect_to user_contacts_path, notice: 'Contact updated successfully'
     else
-      flash.now[:alert] = 'User not updated' 
+      flash.now[:alert] = 'Contact not updated' 
       render 'edit'
     end   	
   end	
@@ -47,7 +47,7 @@ class ContactsController < ApplicationController
   end
   
   def set_contact
-    @contact = @user.contacts.find(params[:id])	
+    @contact = current_user.contacts.find(params[:id])	
   end
 
   def contact_params

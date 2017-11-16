@@ -1,12 +1,12 @@
+<hr class="border">
 <%= form_for ([@user, @contact]) do |f| %>
-<%= @contact.errors.full_messages.to_sentence%>
+  <%= @contact.errors.full_messages.to_sentence%>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>  
 
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p> 
-
-  <p>
-    <%= f.submit %>
-  </p>  
+    <div class="form-group">
+      <%= f.submit %>
+    </div>  
 <% end %>

@@ -1,13 +1,22 @@
-<h1>User Details</h1>
+<div class="container main-container">
+  <div class="main-container-top">
+    <div class="filter-icons">
+      <ul class="nav navbar-nav navbar-right">
+        <%= link_to 'Edit', edit_user_path(@user) %> 
+      </ul>
+    </div>
+  </div>
+  <h3>Uesr - Details</h3> 
+    <hr class="border">
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @user.name %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
 
-<%= link_to 'Back', users_path %>  
+</div>  

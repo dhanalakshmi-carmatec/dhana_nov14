@@ -14,9 +14,9 @@ class ContactAddressesController < ApplicationController
   def create
     @contact_address = @contact.contact_addresses.new(contact_address_params)
       if @contact_address.save
-      	redirect_to contact_contact_addresses_path, notice: 'ContactAddress created successfully'
+      	redirect_to contact_contact_addresses_path, notice: 'Contact address created successfully'
       else
-      	flash.now[:alert] = 'ContactAddress not created'
+      	flash.now[:alert] = 'Contact address not created'
         render 'new'
       end  	
   end	
@@ -26,16 +26,16 @@ class ContactAddressesController < ApplicationController
 
   def update
     if @contact_address.update(contact_address_params)
-      	redirect_to contact_contact_addresses_path, notice: 'ContactAddress updated successfully'
+      	redirect_to contact_contact_addresses_path, notice: 'Contact address updated successfully'
     else
-      	flash.now[:alert] = 'ContactAddress not updated'
+      	flash.now[:alert] = 'Contact address not updated'
         render 'edit'
     end 
   end	
 
   def destroy
     @contact_address.destroy
-      redirect_to contact_contact_addresses_path, notice: 'ContactAddress deleted successfully'
+      redirect_to contact_contact_addresses_path, notice: 'Contact address deleted successfully'
   end	
   
   def show
