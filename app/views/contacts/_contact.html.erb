@@ -1,9 +1,9 @@
 <tr>
     <td><%= contact.name %></td>
     <td class="actions">
-      <%= link_to 'Show', user_contact_path(@user, contact), class: "btn btn-default"%>
-      <%= link_to 'Edit', edit_user_contact_path(@user, contact), class: "btn btn-default"%>
-      <%= link_to 'Delete', user_contact_path(@user, contact), method: :delete, data: {confirm: 'Are you sure'}, class: "btn btn-default"%></td>
+      <%= link_to 'Show', user_contact_path(@user, contact), class: "btn btn-success"%>
+      <%= link_to 'Edit', edit_user_contact_path(@user, contact), class: "btn btn-primary"%>
+      <%= link_to 'Delete', user_contact_path(@user, contact), method: :delete, data: {confirm: 'Are you sure'}, class: "btn btn-success"%></td>
      <!-- <td>
       <%#= link_to 'ContactAddresses', contact_contact_addresses_path(contact, @contact_address)%> 
      </td> 

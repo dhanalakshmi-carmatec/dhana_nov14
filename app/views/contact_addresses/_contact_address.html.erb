@@ -2,9 +2,9 @@
     <td><%= contact_address.address_type %></td>
     <td><%= contact_address.address %></td>
     <td class="actions">
-      <%= link_to 'Show', contact_contact_address_path(@contact, contact_address), class: "btn btn-default"%>
-      <%= link_to 'Edit', edit_contact_contact_address_path(@contact, contact_address), class: "btn btn-default"%>
-      <%= link_to 'Delete', contact_contact_address_path(@contact, contact_address), method: :delete, data: {confirm: 'Are you sure'}, class: "btn btn-default"%>
+      <%= link_to 'Show', contact_contact_address_path(@contact, contact_address), class: "btn btn-primary"%>
+      <%= link_to 'Edit', edit_contact_contact_address_path(@contact, contact_address), class: "btn btn-success"%>
+      <%= link_to 'Delete', contact_contact_address_path(@contact, contact_address), method: :delete, data: {confirm: 'Are you sure'}, class: "btn btn-primary"%>
 
     </td>  
 </tr>
