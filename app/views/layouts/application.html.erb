@@ -11,7 +11,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   
-      <nav class="navbar navbar-inverse">
+      <nav class="navbar navbar-light" style="background-color: #000000;">
       <div class="container-fluid">
        <div class="navbar-header">
           <a class="navbar-brand" href="#">Sample Project</a>
@@ -27,6 +27,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
+            <li><%= current_user.name %></li>
             <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to 'Sign Up', new_user_registration_path %></li>
