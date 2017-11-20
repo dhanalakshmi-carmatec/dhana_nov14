@@ -6,12 +6,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <%= csrf_meta_tags %>
+    
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  
-      <nav class="navbar navbar-light" style="background-color: #000000;">
+     <%= csrf_meta_tags %>
+      
+     </head>
+     <body>
+     <nav class="navbar navbar-light" style="background-color: #000000;">
       <div class="container-fluid">
        <div class="navbar-header">
           <a class="navbar-brand" href="#">Manage Contacts</a>
@@ -21,13 +24,12 @@
           <li><%= link_to "Users", users_path %></li> 
           <% if user_signed_in? %>
             <li><%= link_to "Contacts", user_contacts_path(current_user, @contact) %></li>
-            <li><%= link_to "Contact Addresses", contact_contact_addresses_path(current_user, @contact_address) %></li> 
-            <li><%= link_to "Contact PhoneNumbers", contact_contact_phone_numbers_path(current_user, @contact_phone_numbers) %></li>  
           <%end%> 
+          
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-            <li><%= current_user.name %></li>
+            <li><%= current_user.email %></li>
             <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to 'Login', new_user_session_path %></li>
@@ -36,10 +38,7 @@
         </ul>
       </nav>
      </div>
-     </head>
-     <body>
-    <!-- <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p> -->
+    
     <%= yield %>
   </body>
 </html>

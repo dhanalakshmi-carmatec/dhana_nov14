@@ -3,6 +3,8 @@
     <section class="title-header">
       <h1> Edit User</h1>
     </section>
-      <%= render 'form' %>
+     <%= form_for @user, path: user_path(@user), method: :put do |f| %>
+      <%= render 'form', f: f %>
+     <%end%>
   </div>
 </div>

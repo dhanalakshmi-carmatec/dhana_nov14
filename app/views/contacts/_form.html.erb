@@ -1,17 +1,7 @@
 <hr class="border">
 <%= form_for ([@user, @contact]) do |f| %>
   <%= @contact.errors.full_messages.to_sentence%>
-    <style> 
-     input[type=text] {
-     width: 100%;
-     padding: 12px 20px;
-     margin: 8px 0;
-     box-sizing: border-box;
-     border: none;
-     background-color: #808000;
-     color: white;
-     }
-   </style>
+    
     <div class="form-group">
       <%= f.label :name %>
       <%= f.text_field :name %>
