@@ -8,6 +8,7 @@ class ContactsController < ApplicationController
 
   def new
   	@contact = current_user.contacts.new
+    3.times { @contact.contact_addresses.build}
   end
 
   def create 
@@ -51,7 +52,8 @@ class ContactsController < ApplicationController
   end
 
   def contact_params
-    params.require(:contact).permit(:user_id, :name)
+    params.require(:contact).permit(:name, contact_addresses_attributes: [:id, :address_type, :address, :_destroy])
   end	
+
 end
 

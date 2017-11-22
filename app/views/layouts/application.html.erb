@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-     <%= csrf_meta_tags %>
-      
-     </head>
-     <body>
+    <%= csrf_meta_tags %>      
+  </head>
+  <body>
      <nav class="navbar navbar-light" style="background-color: #000000;">
       <div class="container-fluid">
        <div class="navbar-header">
@@ -22,23 +19,21 @@
         <ul class="nav navbar-nav">
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Users", users_path %></li> 
-          <% if user_signed_in? %>
-            <li><%= link_to "Contacts", user_contacts_path(current_user, @contact) %></li>
-          <%end%> 
-          
+            <% if user_signed_in? %>
+              <li><%= link_to "Contacts", user_contacts_path(current_user, @contact) %></li>
+            <%end%> 
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-            <li><%= current_user.email %></li>
+            <!-- <li><%#= current_user.email %></li> -->
             <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to 'Login', new_user_session_path %></li>
             <li><%= link_to 'Sign Up', new_user_registration_path %></li>
           <% end %>
         </ul>
-      </nav>
-     </div>
-    
+      </div> 
+     </nav>      
     <%= yield %>
   </body>
 </html>

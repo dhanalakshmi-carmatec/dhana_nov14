@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   root 'home#index'
   
-  resources :users do
+  resources :users, path: "musers" do
   	resources :contacts
   end 	
 

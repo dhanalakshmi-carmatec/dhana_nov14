@@ -1,13 +1,31 @@
-<tr>
-    <td><%= contact.name %></td>
+<!-- <tr>
+    <td><%#= contact.name %></td>
     <td class="actions">
-      <%= link_to 'Show', user_contact_path(@user, contact), class: "btn btn-success"%>
-      <%= link_to 'Edit', edit_user_contact_path(@user, contact), class: "btn btn-primary"%>
-      <%= link_to 'Delete', user_contact_path(@user, contact), method: :delete, data: {confirm: 'Are you sure'}, class: "btn btn-success"%></td>
+      <%#= link_to 'Show', user_contact_path(@user, contact), class: "btn btn-success"%>
+      <%#= link_to 'Edit', edit_user_contact_path(@user, contact), class: "btn btn-primary"%>
+      <%#= link_to 'Delete', user_contact_path(@user, contact), method: :delete, data: {confirm: 'Are you sure'}, class: "btn btn-success"%></td>
      <td>
-      <%= link_to 'ContactAddresses', contact_contact_addresses_path(contact, @contact_address), class: "btn btn-warning"%> 
+      <%#= link_to 'ContactAddresses', contact_contact_addresses_path(contact, @contact_address), class: "btn btn-warning"%> 
      </td> 
      <td>
-      <%= link_to 'Contact PhoneNumbers', contact_contact_phone_numbers_path(contact, @contact_phone_number), class: "btn btn-warning"%> 
+      <%#= link_to 'Contact PhoneNumbers', contact_contact_phone_numbers_path(contact, @contact_phone_number), class: "btn btn-warning"%> 
     </td>
-</tr>
+</tr> -->
+
+<div class="table-structure">
+  <table class="table table-bordered">
+          <strong>Name: <%= contact.name %></strong> 
+          <ul class="nav navbar-nav navbar-center">
+           <%= link_to 'Edit contact', edit_user_contact_path(@user, contact),class: "btn btn-success" %>
+           </ul>
+  </table>
+  <% if contact.contact_addresses.any? %>
+    Addresses:
+    <ul>
+      <% contact.contact_addresses.each do |addr| %>
+            <li><%=  :AddressType %>: <%= addr.address_type %>,  <%=  :Address %>: <%= addr.address %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  
+</div> 

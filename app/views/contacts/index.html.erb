@@ -1,8 +1,8 @@
-<div class="container main-container">
+ <div class="container main-container">
   <div class="main-container-top">
     <div class="filter-icons">
       <ul class="nav navbar-nav navbar-right">
-        <%= link_to 'New', new_user_contact_path, class: "btn btn-warning" %>
+        <%= link_to 'Add Contact', new_user_contact_path, class: "btn btn-warning" %>
       </ul>
     </div>
       <h2>CONTACTS</h2>
@@ -12,10 +12,7 @@
        <div class="table-responsive scrollbar" id="table-scrollbar">	 
 		 <table class="table mmt-table" id="emp_table">
            <thead>
-             <tr>
-               <th>Name</th>
-               <th class="actions">Actions</th>
-              </tr>
+             
            </thead>
            <body>
              <%= render @contacts %>
@@ -24,4 +21,10 @@
        </div>
       </div>
   </div>
-</div>
+</div> 
+
+
+<!-- <h1>Contacts</h1>
+        <%#= link_to 'Add contact', new_user_contact_path %>    
+  <%#= render @contacts %>
+ -->
