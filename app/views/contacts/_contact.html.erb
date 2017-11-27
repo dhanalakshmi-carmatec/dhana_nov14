@@ -13,19 +13,30 @@
 </tr> -->
 
 <div class="table-structure">
-  <table class="table table-bordered">
-          <strong>Name: <%= contact.name %></strong> 
-          <ul class="nav navbar-nav navbar-center">
-           <%= link_to 'Edit contact', edit_user_contact_path(@user, contact),class: "btn btn-success" %>
-           </ul>
-  </table>
+  
   <% if contact.contact_addresses.any? %>
     Addresses:
     <ul>
       <% contact.contact_addresses.each do |addr| %>
             <li><%=  :AddressType %>: <%= addr.address_type %>,  <%=  :Address %>: <%= addr.address %></li>
+
+      <% end %>
+    </ul>
+  <% end %>
+
+  <% if contact.contact_phone_numbers.any? %>
+    PhoneNumbers:
+    <ul>
+      <% contact.contact_phone_numbers.each do |phone_number| %>
+            <li><%=  :PhoneType %>: <%= phone_number.phone_type %>,  <%=  :Phone_number %>: <%= number_to_phone(phone_number.phone_number) %></li>
       <% end %>
     </ul>
   <% end %>
   
+  <table class="table table-bordered">
+          <strong>Name: <%= contact.name %></strong> 
+          <ul class="nav navbar-nav navbar-center">
+           <%= link_to 'Edit contact', edit_user_contact_path(@user, contact),class: "btn btn-success" %>
+          </ul>
+  </table>
 </div> 

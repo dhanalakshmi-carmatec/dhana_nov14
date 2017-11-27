@@ -8,7 +8,8 @@ class ContactsController < ApplicationController
 
   def new
   	@contact = current_user.contacts.new
-    3.times { @contact.contact_addresses.build}
+    @contact.contact_addresses.build
+    @contact.contact_phone_numbers.build
   end
 
   def create 
@@ -16,6 +17,7 @@ class ContactsController < ApplicationController
       if @contact.save
       	redirect_to user_contacts_path, notice: 'Contact created successfully'
       else
+        @contact.contact_addresses.build unless @contact.contact_addresses.present?
         flash.now[:alert] = 'Contact not created' 
         render 'new'
       end   	
@@ -52,7 +54,7 @@ class ContactsController < ApplicationController
   end
 
   def contact_params
-    params.require(:contact).permit(:name, contact_addresses_attributes: [:id, :address_type, :address, :_destroy])
+    params.require(:contact).permit(:name, contact_addresses_attributes: [:id, :address_type, :address, :phone_type, :phone_number, :_destroy], contact_phone_numbers_attributes: [:id, :phone_type, :phone_number, :_destroy])
   end	
 
 end

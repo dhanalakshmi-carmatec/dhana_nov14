@@ -25,15 +25,30 @@
   <div>
     <p><strong>Addresses:</strong></p>
 
-    <div id="contact_addresses"
+    <div id="contact_addresses">
       <%= f.fields_for :contact_addresses do |address| %>
         <%= render 'contact_address_fields', f: address %>
       <% end %>  
-      <div class="links">
+      <div>
         <%= link_to_add_association 'Add Address', f, :contact_addresses %>
       </div>
      </div>
   </div>
+  
+  <div>
+    <p><strong>PhoneNumbers:</strong></p>
 
-  <%= f.submit %>
-<%end%>
+    <div id="contact_phone_numbers">
+      <%= f.fields_for :contact_phone_numbers do |phone_number| %>
+        <%= render 'contact_phone_number_fields', f: phone_number %>
+      <% end %>  
+      <div>
+        <%= link_to_add_association 'Add PhoneNumber', f, :contact_phone_numbers %>
+      </div>
+     </div>
+  </div>
+
+  <div class="form-group">
+      <%= f.submit %>
+  </div>  
+<% end %>

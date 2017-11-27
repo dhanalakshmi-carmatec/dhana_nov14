@@ -1,0 +1,11 @@
+<div class="nested-fields">
+  <%= f.label :phone_type %>
+  <%= f.select :phone_type, options_for_select(["Home", "Office", "Fax", "Mobile", "Other"]), prompt: 'Select One' %> 
+
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+
+  <%#= f.check_box :_destroy %>
+
+  <%= link_to_remove_association "Remove Phone number", f %>
+</div>
